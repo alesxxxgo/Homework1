@@ -1,12 +1,11 @@
 @media (max-width: 767px) {
     .center {
-        // Уменьшаем отступы по бокам, чтобы на узких телефонах контенту было просторнее
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .top {
-        height: auto; // Позволяет первому экрану подстраиваться под высоту контента на телефонах
+        height: auto;
         padding-top: 147px;
         padding-bottom: 182px;
         position: relative;
@@ -17,7 +16,7 @@
         &__stars-3,
         &__stars-4,
         &__stars-5 {
-            display: none !important; // Полностью убирает картинки из разметки на телефонах
+            display: none !important;
         }
 
         &__stars-9 {
@@ -47,7 +46,6 @@
             position: absolute;
             border-width: 1px;
             display: inline;
-
         }
 
         &__stars-12 {
@@ -63,40 +61,39 @@
             opacity: 1;
             top: 580px;
             left: 304px;
-            position: absolute;
+            position: absolute; // Пофиксил опечатку 'a' из твоего кода на 'absolute'
             border-width: 1px;
             display: inline;
         }
         
-        // Главный трюк: заставляем весь блок с текстом выровняться по центру экрана
         &__desc {
             display: flex;
             flex-direction: column;
-            align-items: center;    // Центрирует все элементы (заголовок, текст, кнопку) по горизонтали
-            text-align: center;     // Центрирует строки текста внутри самих элементов
-            width: 100%;            // Разрешает контейнеру занимать всю доступную ширину
+            align-items: center;
+            text-align: center;
+            width: 100%;
 
             &-title {
-                font-size: 32px;        // Чуть уменьшаем размер шрифта, чтобы он не ломался на мелкие буквы
+                font-size: 32px;
                 line-height: 110%;
-                width: 100%;            // Убираем жесткие 262px, чтобы текст красиво распределялся по экрану
-                max-width: 262px;       // Ограничиваем максимальную ширину для красивого переноса строк
+                width: 100%;
+                max-width: 262px;
                 padding-left: 17px;
                 padding-right: 17px;
-                padding-top: 0;         // Сбрасываем огромный десктопный отступ сверху
+                padding-top: 0;
                 padding-bottom: 24px;
             }
 
             &-subtitle {
-                font-size: 16px;        // Уменьшаем размер подзаголовка для мобильных
+                font-size: 16px;
                 line-height: 140%;
                 width: 100%;
-                max-width: 296px;       // Ограничиваем ширину, чтобы текст не размазывался от края до края
+                max-width: 296px;
             }
 
             &-btn {
-                margin-top: 36px;       // Делаем аккуратный отступ для кнопки
-                width: 285px;           // Делаем саму кнопку чуть компактнее на телефонах
+                margin-top: 36px;
+                width: 285px;
                 font-size: 16px;
             }
         }
@@ -125,6 +122,90 @@
             height: 19.5px;
             background: url(./img/star.png) no-repeat center / contain;
             flex-shrink: 0;
+        }
+    }
+
+    .games {
+        display: none;
+    }
+
+    // ==========================================
+    // НАСТРОЙКА СЕКЦИИ MINI-GAMES НА СМАРТФОНАХ
+    // ==========================================
+    .mini-games {
+        padding-top: 16px;
+        padding-bottom: 10px;
+
+        &__title {
+            font-size: 32px; // Компактный заголовок "Мини-игры" для мобильного макета
+            margin-bottom: 48px;
+            margin-top: 48px;
+        }
+
+        &__list {
+            gap: 24px; // Мобильные зазоры между вертикальными карточками
+        }
+
+        // Отключаем десктопные звезды 14, 15, 16, 17, чтобы они не ломали мобильный экран
+        .games__stars-14,
+        .games__stars-15,
+        .games__stars-16,
+        .games__stars-17 {
+            display: none !important;
+        }
+    }
+
+    // ТРАНСФОРМАЦИЯ КАРТОЧКИ В ВЕРТИКАЛЬНУЮ
+        // ТРАНСФОРМАЦИЯ КАРТОЧКИ В ВЕРТИКАЛЬНУЮ
+    .mobile-card {
+        display: flex;
+        // !important перебьет любой измененный порядок блоков из HTML и выстроит их сверху вниз
+        flex-direction: column !important; 
+        height: auto;           
+        border-radius: 30px;    
+
+        // Принудительно заставляем картинку всегда рендериться ПЕРВОЙ (сверху)
+        &__image-box {
+            order: 1;           // Задает первый порядковый номер для блока с картинкой
+            width: 100%;        
+            height: 284px;      
+        }
+
+        // Принудительно заставляем текстовый блок всегда рендериться ВТОРЫМ (снизу)
+        &__info {
+            order: 2;           // Задает второй порядковый номер для блока с текстом
+            width: 100%;        
+            padding: 30px 30px; 
+            gap: 16px;
+        }
+
+        &__img {
+            border-radius: 0;   
+        }
+
+        &__title {
+            font-size: 32px;    
+            width: 284px;        
+        }
+
+        &__text {
+            font-size: 16px;    
+            line-height: 108%;
+            max-width: 285px;
+        }
+
+        &__btn {
+            width: 285px;        
+            font-size: 16px;
+            padding: 15.5px 0;
+            margin-top: 16px;
+        }
+    }
+
+    .footer {
+        height: 100px;
+        &__text {
+            font-size: 16px;
         }
     }
 }
