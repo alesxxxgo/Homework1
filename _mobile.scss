@@ -1,0 +1,130 @@
+@media (max-width: 767px) {
+    .center {
+        // Уменьшаем отступы по бокам, чтобы на узких телефонах контенту было просторнее
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .top {
+        height: auto; // Позволяет первому экрану подстраиваться под высоту контента на телефонах
+        padding-top: 147px;
+        padding-bottom: 182px;
+        position: relative;
+        overflow: hidden;
+
+        &__stars-1,
+        &__stars-2,
+        &__stars-3,
+        &__stars-4,
+        &__stars-5 {
+            display: none !important; // Полностью убирает картинки из разметки на телефонах
+        }
+
+        &__stars-9 {
+            opacity: 1;
+            border-width: 1px;
+            top: 0;
+            right: 0;
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+            display: inline;
+        }
+
+        &__stars-10 {
+            opacity: 1;
+            top: 97px;
+            left: 38px;
+            position: absolute;
+            border-width: 1px;
+            display: inline;
+        }
+
+        &__stars-11 {
+            opacity: 1;
+            top: 64px;
+            left: 92px;
+            position: absolute;
+            border-width: 1px;
+            display: inline;
+
+        }
+
+        &__stars-12 {
+            opacity: 1;
+            top: 557px;
+            left: 273px;
+            position: absolute;
+            border-width: 1px;
+            display: inline;
+        }
+
+        &__stars-13 {
+            opacity: 1;
+            top: 580px;
+            left: 304px;
+            position: absolute;
+            border-width: 1px;
+            display: inline;
+        }
+        
+        // Главный трюк: заставляем весь блок с текстом выровняться по центру экрана
+        &__desc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;    // Центрирует все элементы (заголовок, текст, кнопку) по горизонтали
+            text-align: center;     // Центрирует строки текста внутри самих элементов
+            width: 100%;            // Разрешает контейнеру занимать всю доступную ширину
+
+            &-title {
+                font-size: 32px;        // Чуть уменьшаем размер шрифта, чтобы он не ломался на мелкие буквы
+                line-height: 110%;
+                width: 100%;            // Убираем жесткие 262px, чтобы текст красиво распределялся по экрану
+                max-width: 262px;       // Ограничиваем максимальную ширину для красивого переноса строк
+                padding-left: 17px;
+                padding-right: 17px;
+                padding-top: 0;         // Сбрасываем огромный десктопный отступ сверху
+                padding-bottom: 24px;
+            }
+
+            &-subtitle {
+                font-size: 16px;        // Уменьшаем размер подзаголовка для мобильных
+                line-height: 140%;
+                width: 100%;
+                max-width: 296px;       // Ограничиваем ширину, чтобы текст не размазывался от края до края
+            }
+
+            &-btn {
+                margin-top: 36px;       // Делаем аккуратный отступ для кнопки
+                width: 285px;           // Делаем саму кнопку чуть компактнее на телефонах
+                font-size: 16px;
+            }
+        }
+    }
+
+    .ticker {
+        &__group {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 27.5px;
+            padding: 16px 17px; 
+        }
+
+        &__item {
+            font-weight: 700;     
+            font-size: 18px;      
+            text-transform: uppercase; 
+            color: #000000;
+            letter-spacing: 4%;
+            white-space: nowrap;
+        }
+
+        &__star {
+            width: 19.5px;          
+            height: 19.5px;
+            background: url(./img/star.png) no-repeat center / contain;
+            flex-shrink: 0;
+        }
+    }
+}

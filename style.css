@@ -45,6 +45,9 @@
   top: 69px;
   left: 156px;
 }
+.top__stars-9, .top__stars-10, .top__stars-11, .top__stars-12, .top__stars-13 {
+  display: none;
+}
 .top__desc {
   position: relative;
   z-index: 2;
@@ -123,8 +126,8 @@
   white-space: nowrap;
 }
 .ticker__star {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   background: url(./img/star.png) no-repeat center/contain;
   flex-shrink: 0;
 }
@@ -257,4 +260,112 @@
   font-weight: 700;
   color: #000000;
   line-height: 120%;
+}
+
+@media (max-width: 767px) {
+  .center {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .top {
+    height: auto;
+    padding-top: 147px;
+    padding-bottom: 182px;
+    position: relative;
+    overflow: hidden;
+  }
+  .top__stars-1, .top__stars-2, .top__stars-3, .top__stars-4, .top__stars-5 {
+    display: none !important;
+  }
+  .top__stars-9 {
+    opacity: 1;
+    border-width: 1px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    display: inline;
+  }
+  .top__stars-10 {
+    opacity: 1;
+    top: 97px;
+    left: 38px;
+    position: absolute;
+    border-width: 1px;
+    display: inline;
+  }
+  .top__stars-11 {
+    opacity: 1;
+    top: 64px;
+    left: 92px;
+    position: absolute;
+    border-width: 1px;
+    display: inline;
+  }
+  .top__stars-12 {
+    opacity: 1;
+    top: 557px;
+    left: 273px;
+    position: absolute;
+    border-width: 1px;
+    display: inline;
+  }
+  .top__stars-13 {
+    opacity: 1;
+    top: 580px;
+    left: 304px;
+    position: absolute;
+    border-width: 1px;
+    display: inline;
+  }
+  .top__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .top__desc-title {
+    font-size: 32px;
+    line-height: 110%;
+    width: 100%;
+    max-width: 262px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 0;
+    padding-bottom: 24px;
+  }
+  .top__desc-subtitle {
+    font-size: 16px;
+    line-height: 140%;
+    width: 100%;
+    max-width: 296px;
+  }
+  .top__desc-btn {
+    margin-top: 36px;
+    width: 285px;
+    font-size: 16px;
+  }
+  .ticker__group {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 27.5px;
+    padding: 16px 17px;
+  }
+  .ticker__item {
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 4%;
+    white-space: nowrap;
+  }
+  .ticker__star {
+    width: 19.5px;
+    height: 19.5px;
+    background: url(./img/star.png) no-repeat center/contain;
+    flex-shrink: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

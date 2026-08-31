@@ -50,6 +50,14 @@
         left: 156px;
     }
 
+    &__stars-9,
+    &__stars-10,
+    &__stars-11,
+    &__stars-12,
+    &__stars-13 {
+        display: none;
+    }
+
     &__desc {
         position: relative;
         z-index: 2; 
@@ -134,8 +142,8 @@
     }
 
     &__star {
-        width: 24px;          
-        height: 24px;
+        width: 36px;          
+        height: 36px;
         background: url(./img/star.png) no-repeat center / contain;
         flex-shrink: 0;
     }
@@ -300,3 +308,5 @@
         line-height: 120%;
     }
 }
+
+@import 'mobile';
