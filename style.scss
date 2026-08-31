@@ -296,8 +296,7 @@
         background-color: #f7f7f7;
         width: 108px;
         padding: 8px 16px 10px 16px;
-        border-radius: 52px;
-; 
+        border-radius: 52px; 
     }
 
     &__title {
@@ -307,6 +306,181 @@
         color: #000000; 
         line-height: 120%;
     }
+}
+
+// ==========================================
+// ДЕСКТОПНАЯ СЕКЦИЯ ДЛЯ НОВОГО БЛОКА ИГР
+// ==========================================
+.mini-games {
+    background-color: #202124; // Темно-серый благородный фон
+    padding-top: 96px;         // Крупные десктопные отступы
+    padding-bottom: 96px;
+    position: relative;        // Точка якорения для твоих новых звезд
+    overflow: hidden;
+
+    &__title {
+        font-size: 64px;       // Большой заголовок в стиле твоего сайта
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 100%;
+        margin-bottom: 48px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;             // Четкий зазор в 32px между горизонтальными карточками
+        width: 100%;
+    }
+
+        // --- ТВОИ НОВЫЕ ЧЕТЫРЕ ЗВЕЗДЫ ИЗ HTML (ИСПРАВЛЕНО ДЛЯ 4K) ---
+    .games__stars-14 {
+        position: absolute;
+        opacity: 1;
+        top: 120px;
+        
+        // На десктопе 1440px значение left: 1277px находится в 557px правее центра.
+        // Формула calc(50% + ...) намертво привяжет её к этой точке на любом мониторе.
+        left: calc(50% + 557px); 
+        border-width: 1px;
+        z-index: 1;
+    }
+
+    .games__stars-15 {
+        position: absolute;
+        opacity: 1;
+        top: 150px;
+        
+        // Смещаем на 600px правее центра (точно по правой линии карточек)
+        left: calc(50% + 600px); 
+        border-width: 1px;
+        z-index: 1;
+    }
+
+    .games__stars-16 {
+        width: 69px;
+        height: 69px;
+        position: absolute;
+        top: 3350px;
+        
+        // Нижняя правая звезда на уровне 600px от центра
+        left: calc(50% + 599px); 
+        border-width: 1px;
+        z-index: 1;
+    }
+
+    .games__stars-17 {
+        width: 41px;
+        height: 41px;
+        position: absolute;
+        top: 3400px;
+        
+        // Чуть левее нижней большой звезды
+        left: calc(50% + 529px); 
+        border-width: 1px;
+        z-index: 1;
+    }
+}
+
+// ==========================================
+// СТИЛИ КАРТОЧКИ ДЛЯ ДЕСКТОПА (MOBILE-CARD)
+// ==========================================
+.mobile-card {
+    display: flex;
+    flex-direction: row;       // Картинка и текст строго в один ряд (50% на 50%)
+    width: 100%;
+    height: 500px;             // Фиксированная десктопная высота для баланса пропорций
+    background-color: #ffffff;
+    border-radius: 50px;       // Красивое скругление углов
+    overflow: hidden;          // Картинка не вылезает за скругленные углы
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    // Эффект приподнимания карточки при наведении мыши
+    &:hover {
+        transform: translateY(-8px);
+        cursor: pointer;
+    }
+
+    // Половина под картинку
+    &__image-box {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;     // Картинка заполняет область без искажения пропорций
+        border-radius: 30px;
+    }
+
+    // Половина под контент
+    &__info {
+        width: 50%;
+        padding: 48px 48px;    // Просторные десктопные паддинги для текста
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;             // Зазоры между заголовком, описанием и кнопкой
+    }
+
+    &__title {
+        width: 450px;
+        font-size: 48px;
+        font-weight: 700;
+        color: #000000;
+        line-height: 100%;
+    }
+
+    &__text {
+        font-size: 24px;
+        font-weight: 400;
+        color: #202027;
+        line-height: 32px;
+        max-width: 457px;      // Ограничиваем длину строки для легкого чтения
+    }
+
+    &__btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: #202124; // Черная кнопка "Играть!"
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 142%;
+        padding: 16px 75.5px;
+        border-radius: 60px;   // Полностью овальная форма капсулы
+        margin-top: 12px;
+        border: 1px solid #202124;
+        transition: all 0.3s ease-in-out;
+
+        // Плавный инверсивный ховер для кнопки
+        &:hover {
+            background-color: #ffffff;
+            color: #202124;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    height: 150px;
+    background-color: #BDED35;
+    justify-content: center;
+    align-items: center;
+    &__text {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: #000
+
+    }
+
 }
 
 @import 'mobile';

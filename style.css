@@ -262,6 +262,146 @@
   line-height: 120%;
 }
 
+.mini-games {
+  background-color: #202124;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  position: relative;
+  overflow: hidden;
+}
+.mini-games__title {
+  font-size: 64px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 100%;
+  margin-bottom: 48px;
+}
+.mini-games__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+.mini-games .games__stars-14 {
+  position: absolute;
+  opacity: 1;
+  top: 120px;
+  left: calc(50% + 557px);
+  border-width: 1px;
+  z-index: 1;
+}
+.mini-games .games__stars-15 {
+  position: absolute;
+  opacity: 1;
+  top: 150px;
+  left: calc(50% + 600px);
+  border-width: 1px;
+  z-index: 1;
+}
+.mini-games .games__stars-16 {
+  width: 69px;
+  height: 69px;
+  position: absolute;
+  top: 3350px;
+  left: calc(50% + 599px);
+  border-width: 1px;
+  z-index: 1;
+}
+.mini-games .games__stars-17 {
+  width: 41px;
+  height: 41px;
+  position: absolute;
+  top: 3400px;
+  left: calc(50% + 529px);
+  border-width: 1px;
+  z-index: 1;
+}
+
+.mobile-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.mobile-card:hover {
+  transform: translateY(-8px);
+  cursor: pointer;
+}
+.mobile-card__image-box {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.mobile-card__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+}
+.mobile-card__info {
+  width: 50%;
+  padding: 48px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.mobile-card__title {
+  width: 450px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 100%;
+}
+.mobile-card__text {
+  font-size: 24px;
+  font-weight: 400;
+  color: #202027;
+  line-height: 32px;
+  max-width: 457px;
+}
+.mobile-card__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #202124;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 142%;
+  padding: 16px 75.5px;
+  border-radius: 60px;
+  margin-top: 12px;
+  border: 1px solid #202124;
+  transition: all 0.3s ease-in-out;
+}
+.mobile-card__btn:hover {
+  background-color: #ffffff;
+  color: #202124;
+}
+
+.footer {
+  display: flex;
+  height: 150px;
+  background-color: #BDED35;
+  justify-content: center;
+  align-items: center;
+}
+.footer__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
 @media (max-width: 767px) {
   .center {
     padding-left: 40px;
