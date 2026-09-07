@@ -17,7 +17,6 @@
     background: #E1FF8F;
     height: 712px;
 
-    // Велика зірка-вектор праворуч
     &__stars-1 {
         top: 0;
         right: 0;
@@ -27,7 +26,6 @@
         pointer-events: none;
     }
 
-    // Середні зірки (праворуч внизу)
     &__stars-2 {
         position: absolute;
         top: 568px;
@@ -40,7 +38,6 @@
         left: calc(50% + 348px); 
     }
 
-    // Ліві зірки (вгорі)
     &__stars-4 {
         position: absolute;
         top: 94px;
@@ -51,6 +48,14 @@
         position: absolute;
         top: 69px;
         left: 156px;
+    }
+
+    &__stars-9,
+    &__stars-10,
+    &__stars-11,
+    &__stars-12,
+    &__stars-13 {
+        display: none;
     }
 
     &__desc {
@@ -104,27 +109,26 @@
     }
 }
 
-// БЛОК БЕГУЩЕЙ СТРОКИ — СТРОГО В ОДНУ ЛИНИЮ БЕЗ ПЕРЕНОСОВ
 .ticker {
     width: 100%;
     background-color: #BCEC30;
     overflow: hidden;
-    display: flex;          // Выстраивает внутренние треки в один ряд
-    flex-wrap: nowrap;      // Запрещает перенос дублирующей группы вниз
+    display: flex;
+    flex-wrap: nowrap;
     user-select: none;
 
     &__container {
         display: flex;
-        flex-wrap: nowrap;  // Гарантирует, что контейнер не ломает линию
-        width: max-content; // Позволяет контенту растягиваться шире экрана
+        flex-wrap: nowrap;
+        width: max-content;
         animation: scroll-marquee 25s linear infinite; 
     }
 
     &__group {
         display: flex;
         align-items: center;
-        flex-wrap: nowrap;  // Текст и звезды внутри группы всегда в один ряд
-        gap: 60px;          // Отступы между играми
+        flex-wrap: nowrap;
+        gap: 60px;
         padding: 24px 30px; 
     }
 
@@ -134,14 +138,14 @@
         text-transform: uppercase; 
         color: #000000;
         letter-spacing: 0.5px;
-        white-space: nowrap; // Запрещает словам внутри названий прыгать на новую строку
+        white-space: nowrap;
     }
 
     &__star {
-        width: 24px;          
-        height: 24px;
+        width: 36px;          
+        height: 36px;
         background: url(./img/star.png) no-repeat center / contain;
-        flex-shrink: 0;      // Запрещает сжимать звезду, сохраняя пропорции 1:1
+        flex-shrink: 0;
     }
 
     &:hover &__container {
@@ -149,7 +153,6 @@
     }
 }
 
-// ОПТИМИЗИРОВАННАЯ АНИМАЦИЯ ПЛАВНОГО СДВИГА
 @keyframes scroll-marquee {
     0% {
         transform: translate3d(0, 0, 0);
@@ -174,20 +177,14 @@
         height: 584.71px;
         opacity: 1;
         
-        // --- КОРРЕКЦИЯ ПО ВЕРТИКАЛИ ---
-        // Смещаем звезду вниз от верхнего края секции .games, чтобы она зашла за карточку
         top: 87px; 
         
-        // --- КОРРЕКЦИЯ ПО ГОРИЗОНТАЛИ ---
-        // Уменьшаем сдвиг вправо с 333px до 230px, чтобы затащить левый луч глубоко под карточку
         left: calc(50% + 230px); 
         
         transform: rotate(6.77deg);
         
         background: url('./img/stars-6.png') no-repeat center / contain;
         
-        // --- СЛОЙ ЗВЕЗДЫ ---
-        // Оставляем z-index: 1, но теперь карточки принудительно поднимем выше
         z-index: 1; 
         pointer-events: none; 
     }
@@ -199,21 +196,17 @@
         height: 54px;
         top: 700px;   
 
-        // Магия формулы: calc(50% - 600px) — это левый край карточек.
-        // Вычитаем 660px, чтобы звезда ВСЕГДА шла ровно на 60px левее первой карточки на любом мониторе.
         left: calc(50% - 680px); 
         
         z-index: 2;
     }
 
-    // Маленькая из двух маленьких (верхняя)
     &__stars-8 {
         position: absolute;
         width: 31px;
         height: 31px;
         top: 650px;   
         
-        // Ставим её чуть ближе к карточкам (на 40px левее их края)
         left: calc(50% - 700px); 
         
         transform: rotate(15deg); 
@@ -223,7 +216,7 @@
 
     &__desc {
         position: relative;
-        z-index: 3; // Текст всегда на самом верхнем слое
+        z-index: 3;
         margin-bottom: 64px; 
 
         &-title {
@@ -252,7 +245,6 @@
     }
 }
 
-// Стили самой карточки (твои оригинальные стили без изменений)
 .game-card {
     display: flex;
     flex-direction: column;
@@ -265,9 +257,6 @@
     z-index: 2; 
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
 
-    // --- ПРОСТОЙ ФИКС ЗАЗОРОВ ---
-    // Сдвигаем 4-ю и 6-ю карточки вверх ровно на высоту одной строки текста (38px).
-    // Это идеально схлопнет лишний отступ, и зазор между ними станет ровно 32px!
     &:nth-child(4),
     &:nth-child(6) {
         margin-top: -38px;
@@ -301,16 +290,190 @@
     }
 
     &__number {
-        font-size: 14px;
-        font-weight: 400;
-        color: #7d7d7d; 
+        font-size: 16px;
+        font-weight: 500;
+        color: #202027;
+        background-color: #f7f7f7;
+        width: 108px;
+        padding: 8px 16px 10px 16px;
+        border-radius: 52px; 
     }
 
     &__title {
-        width: 270px;
+        width: 300px;
         font-size: 32px;
         font-weight: 700;
         color: #000000; 
         line-height: 120%;
     }
 }
+
+// ==========================================
+// ДЕСКТОПНАЯ СЕКЦИЯ ДЛЯ НОВОГО БЛОКА ИГР
+// ==========================================
+.mini-games {
+    background-color: #202124; // Темно-серый благородный фон
+    padding-top: 96px;         // Крупные десктопные отступы
+    padding-bottom: 96px;
+    position: relative;        // Точка якорения для твоих новых звезд
+    overflow: hidden;
+
+    &__title {
+        font-size: 64px;       // Большой заголовок в стиле твоего сайта
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 100%;
+        margin-bottom: 48px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;             // Четкий зазор в 32px между горизонтальными карточками
+        width: 100%;
+    }
+
+        // --- ТВОИ НОВЫЕ ЧЕТЫРЕ ЗВЕЗДЫ ИЗ HTML (ИСПРАВЛЕНО ДЛЯ 4K) ---
+    .games__stars-14 {
+        position: absolute;
+        opacity: 1;
+        top: 120px;
+        
+        // На десктопе 1440px значение left: 1277px находится в 557px правее центра.
+        // Формула calc(50% + ...) намертво привяжет её к этой точке на любом мониторе.
+        left: calc(50% + 557px); 
+        border-width: 1px;
+        z-index: 1;
+    }
+
+    .games__stars-15 {
+        position: absolute;
+        opacity: 1;
+        top: 150px;
+        
+        // Смещаем на 600px правее центра (точно по правой линии карточек)
+        left: calc(50% + 600px); 
+        border-width: 1px;
+        z-index: 1;
+    }
+
+    .games__stars-16 {
+        width: 69px;
+        height: 69px;
+        position: absolute;
+        top: 3350px;
+        
+        // Нижняя правая звезда на уровне 600px от центра
+        left: calc(50% + 599px); 
+        border-width: 1px;
+        z-index: 1;
+    }
+
+    .games__stars-17 {
+        width: 41px;
+        height: 41px;
+        position: absolute;
+        top: 3400px;
+        
+        // Чуть левее нижней большой звезды
+        left: calc(50% + 529px); 
+        border-width: 1px;
+        z-index: 1;
+    }
+}
+
+// ==========================================
+// СТИЛИ КАРТОЧКИ ДЛЯ ДЕСКТОПА (MOBILE-CARD)
+// ==========================================
+.mobile-card {
+    display: flex;
+    flex-direction: row;       // Картинка и текст строго в один ряд (50% на 50%)
+    width: 100%;
+    height: 500px;             // Фиксированная десктопная высота для баланса пропорций
+    background-color: #ffffff;
+    border-radius: 50px;       // Красивое скругление углов
+    overflow: hidden;          // Картинка не вылезает за скругленные углы
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &__image-box {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;     // Картинка заполняет область без искажения пропорций
+        border-radius: 30px;
+    }
+
+    // Половина под контент
+    &__info {
+        width: 50%;
+        padding: 48px 48px;    // Просторные десктопные паддинги для текста
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;             // Зазоры между заголовком, описанием и кнопкой
+    }
+
+    &__title {
+        width: 450px;
+        font-size: 48px;
+        font-weight: 700;
+        color: #000000;
+        line-height: 100%;
+    }
+
+    &__text {
+        font-size: 24px;
+        font-weight: 400;
+        color: #202027;
+        line-height: 32px;
+        max-width: 457px;      // Ограничиваем длину строки для легкого чтения
+    }
+
+    &__btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: #202124; // Черная кнопка "Играть!"
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 142%;
+        padding: 16px 75.5px;
+        border-radius: 60px;   // Полностью овальная форма капсулы
+        margin-top: 12px;
+        border: 1px solid #202124;
+        transition: all 0.3s ease-in-out;
+
+        // Плавный инверсивный ховер для кнопки
+        &:hover {
+            background-color: #ffffff;
+            color: #202124;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    height: 150px;
+    background-color: #BDED35;
+    justify-content: center;
+    align-items: center;
+    &__text {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: #000
+
+    }
+
+}
+
+@import 'mobile';

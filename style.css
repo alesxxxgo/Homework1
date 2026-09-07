@@ -45,6 +45,9 @@
   top: 69px;
   left: 156px;
 }
+.top__stars-9, .top__stars-10, .top__stars-11, .top__stars-12, .top__stars-13 {
+  display: none;
+}
 .top__desc {
   position: relative;
   z-index: 2;
@@ -123,8 +126,8 @@
   white-space: nowrap;
 }
 .ticker__star {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   background: url(./img/star.png) no-repeat center/contain;
   flex-shrink: 0;
 }
@@ -243,14 +246,324 @@
   gap: 16px;
 }
 .game-card__number {
-  font-size: 14px;
-  font-weight: 400;
-  color: #7d7d7d;
+  font-size: 16px;
+  font-weight: 500;
+  color: #202027;
+  background-color: #f7f7f7;
+  width: 108px;
+  padding: 8px 16px 10px 16px;
+  border-radius: 52px;
 }
 .game-card__title {
-  width: 270px;
+  width: 300px;
   font-size: 32px;
   font-weight: 700;
   color: #000000;
   line-height: 120%;
+}
+
+.mini-games {
+  background-color: #202124;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  position: relative;
+  overflow: hidden;
+}
+.mini-games__title {
+  font-size: 64px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 100%;
+  margin-bottom: 48px;
+}
+.mini-games__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+.mini-games .games__stars-14 {
+  position: absolute;
+  opacity: 1;
+  top: 120px;
+  left: calc(50% + 557px);
+  border-width: 1px;
+  z-index: 1;
+}
+.mini-games .games__stars-15 {
+  position: absolute;
+  opacity: 1;
+  top: 150px;
+  left: calc(50% + 600px);
+  border-width: 1px;
+  z-index: 1;
+}
+.mini-games .games__stars-16 {
+  width: 69px;
+  height: 69px;
+  position: absolute;
+  top: 3350px;
+  left: calc(50% + 599px);
+  border-width: 1px;
+  z-index: 1;
+}
+.mini-games .games__stars-17 {
+  width: 41px;
+  height: 41px;
+  position: absolute;
+  top: 3400px;
+  left: calc(50% + 529px);
+  border-width: 1px;
+  z-index: 1;
+}
+
+.mobile-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.mobile-card__image-box {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.mobile-card__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+}
+.mobile-card__info {
+  width: 50%;
+  padding: 48px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.mobile-card__title {
+  width: 450px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 100%;
+}
+.mobile-card__text {
+  font-size: 24px;
+  font-weight: 400;
+  color: #202027;
+  line-height: 32px;
+  max-width: 457px;
+}
+.mobile-card__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #202124;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 142%;
+  padding: 16px 75.5px;
+  border-radius: 60px;
+  margin-top: 12px;
+  border: 1px solid #202124;
+  transition: all 0.3s ease-in-out;
+}
+.mobile-card__btn:hover {
+  background-color: #ffffff;
+  color: #202124;
+}
+
+.footer {
+  display: flex;
+  height: 150px;
+  background-color: #BDED35;
+  justify-content: center;
+  align-items: center;
+}
+.footer__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .top {
+    height: auto;
+    padding-top: 147px;
+    padding-bottom: 182px;
+    position: relative;
+    overflow: hidden;
+  }
+  .top__stars-1, .top__stars-2, .top__stars-3, .top__stars-4, .top__stars-5 {
+    display: none !important;
+  }
+  .top__stars-9 {
+    opacity: 1;
+    border-width: 1px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    display: inline;
+  }
+  .top__stars-10 {
+    opacity: 1;
+    top: 97px;
+    left: 38px;
+    position: absolute;
+    border-width: 1px;
+    display: inline;
+  }
+  .top__stars-11 {
+    opacity: 1;
+    top: 64px;
+    left: 92px;
+    position: absolute;
+    border-width: 1px;
+    display: inline;
+  }
+  .top__stars-12 {
+    opacity: 1;
+    top: 557px;
+    left: 273px;
+    position: absolute;
+    border-width: 1px;
+    display: inline;
+  }
+  .top__stars-13 {
+    opacity: 1;
+    top: 580px;
+    left: 304px;
+    position: absolute;
+    border-width: 1px;
+    display: inline;
+  }
+  .top__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .top__desc-title {
+    font-size: 32px;
+    line-height: 110%;
+    width: 100%;
+    max-width: 262px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 0;
+    padding-bottom: 24px;
+  }
+  .top__desc-subtitle {
+    font-size: 16px;
+    line-height: 140%;
+    width: 100%;
+    max-width: 296px;
+  }
+  .top__desc-btn {
+    margin-top: 36px;
+    width: 285px;
+    font-size: 16px;
+  }
+  .ticker__group {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 27.5px;
+    padding: 16px 17px;
+  }
+  .ticker__item {
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 4%;
+    white-space: nowrap;
+  }
+  .ticker__star {
+    width: 19.5px;
+    height: 19.5px;
+    background: url(./img/star.png) no-repeat center/contain;
+    flex-shrink: 0;
+  }
+  .games {
+    display: none;
+  }
+  .mini-games {
+    padding-top: 16px;
+    padding-bottom: 10px;
+  }
+  .mini-games__title {
+    font-size: 32px;
+    margin-bottom: 48px;
+    margin-top: 48px;
+  }
+  .mini-games__list {
+    gap: 24px;
+  }
+  .mini-games .games__stars-14,
+  .mini-games .games__stars-15,
+  .mini-games .games__stars-16,
+  .mini-games .games__stars-17 {
+    display: none !important;
+  }
+  .mobile-card {
+    display: flex;
+    flex-direction: column !important;
+    height: auto;
+    border-radius: 30px;
+  }
+  .mobile-card__image-box {
+    order: 1;
+    width: 100%;
+    height: 284px;
+  }
+  .mobile-card__info {
+    order: 2;
+    width: 100%;
+    padding: 30px 30px;
+    gap: 16px;
+  }
+  .mobile-card__img {
+    border-radius: 0;
+  }
+  .mobile-card__title {
+    font-size: 32px;
+    width: 284px;
+  }
+  .mobile-card__text {
+    font-size: 16px;
+    line-height: 108%;
+    max-width: 285px;
+  }
+  .mobile-card__btn {
+    width: 285px;
+    font-size: 16px;
+    padding: 15.5px 0;
+    margin-top: 16px;
+  }
+  .footer {
+    height: 100px;
+  }
+  .footer__text {
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */

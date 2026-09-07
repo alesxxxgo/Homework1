@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Главная</title>
 </head>
 <body>
     <header class="center top">
@@ -13,6 +17,11 @@
         <img class="top__stars-3" src="./img/stars-3.png" alt="stars-3">
         <img class="top__stars-4" src="./img/stars-4.png" alt="stars-4">
         <img class="top__stars-5" src="./img/stars-5.png" alt="stars-5">
+        <img class="top__stars-9" src="./img/stars-9.png" alt="stars-9">
+        <img class="top__stars-10" src="./img/stars-10.png" alt="stars-10">
+        <img class="top__stars-11" src="./img/stars-11.png" alt="stars-11">
+        <img class="top__stars-12" src="./img/stars-12.png" alt="stars-12">
+        <img class="top__stars-13" src="./img/stars-13.png" alt="stars-13">
         <section class="top__desc">
             <h1 class="top__desc-title">Добро пожаловать на мой сайт мини-игр</h1>
             <p class="top__desc-subtitle">
@@ -26,7 +35,6 @@
 
     <div class="ticker">
         <div class="ticker__track">
-            <!-- ТОЛЬКО ОДИН ОРИГИНАЛЬНЫЙ НАБОР (ДУБЛИКАТ УДАЛЕН) -->
             <div class="ticker__group">
                 <span class="ticker__item">Викторина</span>
                 <div class="ticker__star"></div>
@@ -58,7 +66,6 @@
         
         <div class="games__grid">
 
-            <!-- Карточка №1 -->
             <a href="#" class="game-card">
                 <div class="game-card__image-box">
                     <img src="./img/game-1.png" alt="Угадай число" class="game-card__img">
@@ -69,7 +76,6 @@
                 </div>
             </a>
 
-            <!-- Карточка №2 -->
             <a href="#" class="game-card">
                 <div class="game-card__image-box">
                     <img src="./img/game-2.png" alt="Простая арифметика" class="game-card__img">
@@ -80,7 +86,6 @@
                 </div>
             </a>
 
-            <!-- Карточка №3 -->
             <a href="#" class="game-card">
                 <div class="game-card__image-box">
                     <img src="./img/game-3.png" alt="Переверни текст" class="game-card__img">
@@ -91,7 +96,6 @@
                 </div>
             </a>
 
-            <!-- Карточка №4 -->
             <a href="#" class="game-card">
                 <div class="game-card__image-box">
                     <img src="./img/game-4.png" alt="Камень, ножницы, бумага" class="game-card__img">
@@ -102,7 +106,6 @@
                 </div>
             </a>
 
-            <!-- Карточка №5 -->
             <a href="#" class="game-card">
                 <div class="game-card__image-box">
                     <img src="./img/game-5.png" alt="Простая викторина" class="game-card__img">
@@ -113,7 +116,6 @@
                 </div>
             </a>
 
-            <!-- Карточка №6 -->
             <a href="#" class="game-card">
                 <div class="game-card__image-box">
                     <img src="./img/game-6.png" alt="Генератор случайных цветов" class="game-card__img">
@@ -125,5 +127,94 @@
             </a>
         </div>
     </section>
+    <!-- НОВАЯ МОБИЛЬНАЯ СЕКЦИЯ -->
+    <section class="mini-games center">
+        <h2 class="mini-games__title">Мини-игры</h2>
+        
+        <!-- Твои мобильные звёзды -->
+        <img class="games__stars-14" src="./img/stars-14.png" alt="star">
+        <img class="games__stars-15" src="./img/stars-15.png" alt="star">
+        <img class="games__stars-16" src="./img/stars-16.png" alt="star">
+        <img class="games__stars-17" src="./img/stars-17.png" alt="star">
+
+        <div class="mini-games__list">
+
+            <!-- Карточка №1 (Текст слева) -->
+            <div class="mobile-card">
+                <div class="mobile-card__info">
+                    <h3 class="mobile-card__title">Угадай число</h3>
+                    <p class="mobile-card__text">Попробуй угадать случайное число от 1 до 100.</p>
+                    <a href="#" class="mobile-card__btn">Играть!</a>
+                </div>
+                <div class="mobile-card__image-box">
+                    <img src="./img/game-1.png" alt="Угадай число" class="mobile-card__img">
+                </div>
+            </div>
+
+            <!-- Карточка №2 (Картинка слева) -->
+            <div class="mobile-card">
+                <div class="mobile-card__image-box">
+                    <img src="./img/game-2.png" alt="Простая арифметика" class="game-card__img">
+                </div>
+                <div class="mobile-card__info">
+                    <h3 class="mobile-card__title">Простая арифметика</h3>
+                    <p class="mobile-card__text">Попробуй решить простые арифметические задачи.</p>
+                    <a href="#" class="mobile-card__btn">Играть!</a>
+                </div>
+            </div>
+
+            <!-- Карточка №3 (Текст слева) -->
+            <div class="mobile-card">
+                <div class="mobile-card__info">
+                    <h3 class="mobile-card__title">Переверни текст</h3>
+                    <p class="mobile-card__text">Попробуй ввести текст, который будет перевернут.</p>
+                    <a href="#" class="mobile-card__btn">Играть!</a>
+                </div>
+                <div class="mobile-card__image-box">
+                    <img src="./img/game-3.png" alt="Переверни текст" class="mobile-card__img">
+                </div>
+            </div>
+
+            <!-- Карточка №4 (Картинка слева) -->
+            <div class="mobile-card">
+                <div class="mobile-card__image-box">
+                    <img src="./img/game-4.png" alt="Камень, ножницы, бумага" class="game-card__img">
+                </div>
+                <div class="mobile-card__info">
+                    <h3 class="mobile-card__title">Камень, ножницы, бумага</h3>
+                    <p class="mobile-card__text">Сыграй в популярную игру против компьютера.</p>
+                    <a href="#" class="mobile-card__btn">Играть!</a>
+                </div>
+            </div>
+
+            <!-- Карточка №5 (Текст слева) -->
+            <div class="mobile-card">
+                <div class="mobile-card__info">
+                    <h3 class="mobile-card__title">Простая викторина</h3>
+                    <p class="mobile-card__text">Отвечай на вопросы викторины с вариантами ответов.</p>
+                    <a href="#" class="mobile-card__btn">Играть!</a>
+                </div>
+                <div class="mobile-card__image-box">
+                    <img src="./img/game-5.png" alt="Простая викторина" class="mobile-card__img">
+                </div>
+            </div>
+
+            <!-- Карточка №6 (Картинка слева) -->
+            <div class="mobile-card">
+                <div class="mobile-card__image-box">
+                    <img src="./img/game-6.png" alt="Генератор случайных цветов" class="game-card__img">
+                </div>
+                <div class="mobile-card__info">
+                    <h3 class="mobile-card__title">Генератор случайных цветов</h3>
+                    <p class="mobile-card__text">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
+                    <a href="#" class="mobile-card__btn">Играть!</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="footer__text">Все права защищены.</p>
+    </footer>
 </body>
 </html>
