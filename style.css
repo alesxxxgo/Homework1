@@ -118,7 +118,7 @@
   padding: 24px 30px;
 }
 .ticker__item {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 28px;
   text-transform: uppercase;
   color: #000000;
@@ -491,7 +491,6 @@
     padding: 16px 17px;
   }
   .ticker__item {
-    font-weight: 700;
     font-size: 18px;
     text-transform: uppercase;
     color: #000000;

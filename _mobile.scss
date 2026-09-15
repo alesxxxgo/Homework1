@@ -61,7 +61,7 @@
             opacity: 1;
             top: 580px;
             left: 304px;
-            position: absolute; // Пофиксил опечатку 'a' из твоего кода на 'absolute'
+            position: absolute;
             border-width: 1px;
             display: inline;
         }
@@ -108,8 +108,7 @@
             padding: 16px 17px; 
         }
 
-        &__item {
-            font-weight: 700;     
+        &__item {  
             font-size: 18px;      
             text-transform: uppercase; 
             color: #000000;
@@ -129,24 +128,20 @@
         display: none;
     }
 
-    // ==========================================
-    // НАСТРОЙКА СЕКЦИИ MINI-GAMES НА СМАРТФОНАХ
-    // ==========================================
     .mini-games {
         padding-top: 16px;
         padding-bottom: 10px;
 
         &__title {
-            font-size: 32px; // Компактный заголовок "Мини-игры" для мобильного макета
+            font-size: 32px;
             margin-bottom: 48px;
             margin-top: 48px;
         }
 
         &__list {
-            gap: 24px; // Мобильные зазоры между вертикальными карточками
+            gap: 24px;
         }
 
-        // Отключаем десктопные звезды 14, 15, 16, 17, чтобы они не ломали мобильный экран
         .games__stars-14,
         .games__stars-15,
         .games__stars-16,
@@ -155,25 +150,20 @@
         }
     }
 
-    // ТРАНСФОРМАЦИЯ КАРТОЧКИ В ВЕРТИКАЛЬНУЮ
-        // ТРАНСФОРМАЦИЯ КАРТОЧКИ В ВЕРТИКАЛЬНУЮ
     .mobile-card {
         display: flex;
-        // !important перебьет любой измененный порядок блоков из HTML и выстроит их сверху вниз
         flex-direction: column !important; 
         height: auto;           
         border-radius: 30px;    
 
-        // Принудительно заставляем картинку всегда рендериться ПЕРВОЙ (сверху)
         &__image-box {
-            order: 1;           // Задает первый порядковый номер для блока с картинкой
+            order: 1;
             width: 100%;        
             height: 284px;      
         }
 
-        // Принудительно заставляем текстовый блок всегда рендериться ВТОРЫМ (снизу)
         &__info {
-            order: 2;           // Задает второй порядковый номер для блока с текстом
+            order: 2;
             width: 100%;        
             padding: 30px 30px; 
             gap: 16px;
