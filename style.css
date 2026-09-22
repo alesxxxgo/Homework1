@@ -282,7 +282,7 @@
   gap: 32px;
   width: 100%;
 }
-.mini-games .games__stars-14 {
+.mini-games__stars-14 {
   position: absolute;
   opacity: 1;
   top: 120px;
@@ -290,7 +290,7 @@
   border-width: 1px;
   z-index: 1;
 }
-.mini-games .games__stars-15 {
+.mini-games__stars-15 {
   position: absolute;
   opacity: 1;
   top: 150px;
@@ -298,7 +298,7 @@
   border-width: 1px;
   z-index: 1;
 }
-.mini-games .games__stars-16 {
+.mini-games__stars-16 {
   width: 69px;
   height: 69px;
   position: absolute;
@@ -307,7 +307,7 @@
   border-width: 1px;
   z-index: 1;
 }
-.mini-games .games__stars-17 {
+.mini-games__stars-17 {
   width: 41px;
   height: 41px;
   position: absolute;
