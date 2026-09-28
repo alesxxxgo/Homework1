@@ -185,11 +185,28 @@
                 <div class="mobile-card__info">
                     <h3 class="mobile-card__title">Простая викторина</h3>
                     <p class="mobile-card__text">Отвечай на вопросы викторины с вариантами ответов.</p>
-                    <a href="#" class="mobile-card__btn">Играть!</a>
+                    <a href="#quiz-game-window" class="mobile-card__btn id-quiz-trigger">Играть!</a>
                 </div>
                 <div class="mobile-card__image-box">
                     <img src="./img/game-5.png" alt="Простая викторина" class="mobile-card__img">
                 </div>
+            </div>
+            <div id="quiz-game-window" class="quiz-container hidden">
+              <div class="quiz-header">
+                <h2>Игра «Викторина»</h2>
+                <button id="close-quiz-btn" class="close-btn">&times;</button>
+              </div>
+              
+              <div id="quiz-box">
+                <p id="question-text" class="question"></p>
+                <div id="options-box" class="options"></div>
+              </div>
+
+              <div id="result-box" class="result-box hidden">
+                <h3>Игра окончена!</h3>
+                <p id="score-text"></p>
+                <button id="restart-btn">Начать заново</button>
+              </div>
             </div>
 
             <div id="random-color-generator" class="mobile-card">
@@ -208,5 +225,6 @@
     <footer class="footer">
         <p class="footer__text">Все права защищены.</p>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
