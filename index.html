@@ -141,12 +141,35 @@
                 <div class="mobile-card__info">
                     <h3 class="mobile-card__title">Угадай число</h3>
                     <p class="mobile-card__text">Попробуй угадать случайное число от 1 до 100.</p>
-                    <a href="#" class="mobile-card__btn">Играть!</a>
+                    <a href="#guess-game-window" class="mobile-card__btn id-guess-trigger">Играть!</a>
                 </div>
                 <div class="mobile-card__image-box">
                     <img src="./img/game-1.png" alt="Угадай число" class="mobile-card__img">
                 </div>
             </div>
+
+            <div id="guess-game-window" class="quiz-container hidden">
+            <div class="quiz-header">
+                <h2>Игра «Угадай число»</h2>
+                <button id="close-guess-btn" class="close-btn">&times;</button>
+            </div>
+  
+            <div id="guess-box">
+                <p class="question">Компьютер загадал число от 1 до 100. Попробуй его угадать!</p>
+                <div class="guess-input-group">
+                    <input type="number" id="user-guess-input" min="1" max="100" placeholder="Введите число...">
+                    <button id="submit-guess-btn">Проверить</button>
+                </div>
+                <p id="guess-hint-text" class="hint-text">Жду вашей догадки...</p>
+            </div>
+
+            <div id="guess-result-box" class="result-box hidden">
+                <h3>Вы угадали! 🎉</h3>
+                <p id="guess-stats-text"></p>
+                <button id="restart-guess-btn">Играть заново</button>
+            </div>
+            </div>
+
 
             <div id="simple-arithmethics" class="mobile-card">
                 <div class="mobile-card__image-box">

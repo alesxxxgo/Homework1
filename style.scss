@@ -571,6 +571,57 @@
     }
 }
 
+.guess-input-group {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 24px;
+
+    input[type="number"] {
+        flex-grow: 1;
+        padding: 18px 24px;
+        font-size: 18px;
+        font-weight: 500;
+        border: 2px solid #f7f7f7;
+        background-color: #f7f7f7;
+        border-radius: 20px;
+        outline: none;
+        font-family: inherit;
+        transition: border-color 0.2s ease;
+
+        &:focus {
+            border-color: #000000;
+            background-color: #ffffff;
+        }
+    }
+
+    #submit-guess-btn {
+        padding: 16px 32px;
+        font-size: 18px;
+        font-weight: 600;
+        background-color: #000000;
+        color: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    }
+}
+
+.hint-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #202027;
+    margin-top: 10px;
+}
+
+
 .hidden {
     display: none !important;
 }

@@ -103,3 +103,101 @@ restartBtn.addEventListener('click', () => {
   resetQuiz();
   showQuestion();
 });
+
+// Переменные для логики игры
+let secretNumber = 0;
+let attemptsCount = 0;
+
+// Элементы интерфейса
+const guessWindow = document.getElementById('guess-game-window');
+const guessInput = document.getElementById('user-guess-input');
+const submitGuessBtn = document.getElementById('submit-guess-btn');
+const guessHintText = document.getElementById('guess-hint-text');
+const guessMainBox = document.getElementById('guess-box');
+const guessResultBox = document.getElementById('guess-result-box');
+const guessStatsText = document.getElementById('guess-stats-text');
+const restartGuessBtn = document.getElementById('restart-guess-btn');
+const closeGuessBtn = document.getElementById('close-guess-btn');
+
+// Кнопки открытия (верхняя плитка-ссылка с главной страницы и нижняя кнопка «Играть!»)
+const openGuessTriggers = document.querySelectorAll('a[href="#guess-the-number"], .id-guess-trigger');
+
+// 1. Функция инициализации / перезапуска игры
+function initGuessGame() {
+  secretNumber = Math.floor(Math.random() * 100) + 1; // Число от 1 до 100
+  attemptsCount = 0;
+  guessInput.value = '';
+  guessHintText.textContent = 'Жду вашей догадки...';
+  guessHintText.style.color = '#202027';
+  guessMainBox.classList.remove('hidden');
+  guessResultBox.classList.add('hidden');
+}
+
+// Функция открытия окна игры с плавным центрированием
+function openGuessGame(e) {
+  e.preventDefault();
+  guessWindow.classList.remove('hidden');
+  initGuessGame();
+  
+  // Плавный скролл: карточка встанет ровно по центру экрана
+  setTimeout(() => {
+    guessWindow.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'nearest'
+    });
+  }, 50);
+}
+
+// Привязываем открытие к кнопкам
+openGuessTriggers.forEach(trigger => {
+  trigger.addEventListener('click', openGuessGame);
+});
+
+// Закрытие игры по крестику
+closeGuessBtn.addEventListener('click', () => {
+  guessWindow.classList.add('hidden');
+});
+
+// 2, 3, 4. Проверка ответа пользователя
+submitGuessBtn.addEventListener('click', () => {
+  const userValue = parseInt(guessInput.value, 10);
+
+  // Простая проверка корректности ввода
+  if (isNaN(userValue) || userValue < 1 || userValue > 100) {
+    guessHintText.textContent = 'Введите число от 1 до 100!';
+    guessHintText.style.color = '#ff4d4d';
+    return;
+  }
+
+  attemptsCount++;
+
+  // 4. Завершение игры при угадывании
+  if (userValue === secretNumber) {
+    guessMainBox.classList.add('hidden');
+    guessResultBox.classList.remove('hidden');
+    guessStatsText.textContent = `Вы угадали число ${secretNumber} за ${attemptsCount} попыток!`;
+    alert(`Поздравляем! Вы угадали число за ${attemptsCount} попыток!`);
+  } 
+  // 3. Подсказки: больше или меньше
+  else if (userValue < secretNumber) {
+    guessHintText.textContent = 'Загаданное число БОЛЬШЕ вашего 📈';
+    guessHintText.style.color = '#007bff';
+  } else {
+    guessHintText.textContent = 'Загаданное число МЕНЬШЕ вашего 📉';
+    guessHintText.style.color = '#007bff';
+  }
+  
+  guessInput.value = ''; // Очищаем инпут для следующей попытки
+  guessInput.focus();
+});
+
+// Бонус: отправка числа по нажатию клавиши Enter
+guessInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    submitGuessBtn.click();
+  }
+});
+
+// Привязка кнопки "Играть заново"
+restartGuessBtn.addEventListener('click', initGuessGame);
