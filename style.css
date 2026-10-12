@@ -512,6 +512,404 @@
     transform: translateY(0);
   }
 }
+#guess-game-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 500px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 48px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInQuiz 0.4s ease-out;
+}
+#guess-game-window .quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+#guess-game-window .quiz-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 100%;
+}
+#guess-game-window .quiz-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 40px;
+  font-weight: 300;
+  color: #a0a0a0;
+  cursor: pointer;
+  line-height: 100%;
+  transition: color 0.3s ease;
+}
+#guess-game-window .quiz-header .close-btn:hover {
+  color: #000000;
+}
+#guess-game-window .question {
+  font-size: 24px;
+  font-weight: 600;
+  color: #202027;
+  line-height: 130%;
+  margin-bottom: 32px;
+}
+#guess-game-window .guess-input-group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+#guess-game-window .guess-input-group input[type=number] {
+  flex-grow: 1;
+  padding: 18px 28px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 2px solid #f7f7f7;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+#guess-game-window .guess-input-group input[type=number]:focus {
+  border-color: #000000;
+  background-color: #ffffff;
+}
+#guess-game-window .guess-input-group input[type=number]::-webkit-outer-spin-button, #guess-game-window .guess-input-group input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#guess-game-window .guess-input-group #submit-guess-btn {
+  padding: 16px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#guess-game-window .guess-input-group #submit-guess-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+#guess-game-window .hint-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #202027;
+  margin-top: 10px;
+}
+#guess-game-window .result-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  padding: 40px 0;
+}
+#guess-game-window .result-box h3 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #BCEC30;
+  -webkit-text-stroke: 1px #000000;
+  margin-bottom: 16px;
+}
+#guess-game-window .result-box p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #202027;
+  margin-bottom: 32px;
+}
+#guess-game-window .result-box #restart-guess-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 247px;
+  border-radius: 60px;
+  padding: 16px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+#guess-game-window .result-box #restart-guess-btn:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+#arithmetic-game-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 500px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 48px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInQuiz 0.4s ease-out;
+}
+#arithmetic-game-window .quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+#arithmetic-game-window .quiz-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 100%;
+}
+#arithmetic-game-window .quiz-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 40px;
+  font-weight: 300;
+  color: #a0a0a0;
+  cursor: pointer;
+  line-height: 100%;
+  transition: color 0.3s ease;
+}
+#arithmetic-game-window .quiz-header .close-btn:hover {
+  color: #000000;
+}
+#arithmetic-game-window .question {
+  font-size: 24px;
+  font-weight: 600;
+  color: #202027;
+  line-height: 130%;
+  margin-bottom: 32px;
+}
+#arithmetic-game-window .guess-input-group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+#arithmetic-game-window .guess-input-group input[type=number] {
+  flex-grow: 1;
+  padding: 18px 28px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 2px solid #f7f7f7;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+#arithmetic-game-window .guess-input-group input[type=number]:focus {
+  border-color: #000000;
+  background-color: #ffffff;
+}
+#arithmetic-game-window .guess-input-group input[type=number]::-webkit-outer-spin-button, #arithmetic-game-window .guess-input-group input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#arithmetic-game-window .guess-input-group #submit-arithmetic-btn {
+  padding: 16px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#arithmetic-game-window .guess-input-group #submit-arithmetic-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+#arithmetic-game-window .hint-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #202027;
+  margin-top: 10px;
+}
+#arithmetic-game-window .result-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  padding: 40px 0;
+}
+#arithmetic-game-window .result-box h3 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+#arithmetic-game-window .result-box p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #202027;
+  margin-bottom: 32px;
+}
+#arithmetic-game-window .result-box #next-arithmetic-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 247px;
+  border-radius: 60px;
+  padding: 16px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+#arithmetic-game-window .result-box #next-arithmetic-btn:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+#flip-game-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 500px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 48px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInQuiz 0.4s ease-out;
+}
+#flip-game-window .quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+#flip-game-window .quiz-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 100%;
+}
+#flip-game-window .quiz-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 40px;
+  font-weight: 300;
+  color: #a0a0a0;
+  cursor: pointer;
+  line-height: 100%;
+  transition: color 0.3s ease;
+}
+#flip-game-window .quiz-header .close-btn:hover {
+  color: #000000;
+}
+#flip-game-window .question {
+  font-size: 24px;
+  font-weight: 600;
+  color: #202027;
+  line-height: 130%;
+  margin-bottom: 32px;
+}
+#flip-game-window .guess-input-group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+#flip-game-window .guess-input-group input[type=text] {
+  flex-grow: 1;
+  padding: 18px 28px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 2px solid #f7f7f7;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+#flip-game-window .guess-input-group input[type=text]:focus {
+  border-color: #000000;
+  background-color: #ffffff;
+}
+#flip-game-window .guess-input-group #submit-flip-btn {
+  padding: 16px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#flip-game-window .guess-input-group #submit-flip-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+#flip-game-window .result-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  padding: 40px 0;
+}
+#flip-game-window .result-box h3 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 16px;
+}
+#flip-game-window .result-box p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #202027;
+  margin-bottom: 32px;
+}
+#flip-game-window .result-box #clear-flip-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 247px;
+  border-radius: 60px;
+  padding: 16px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+#flip-game-window .result-box #clear-flip-btn:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
 .footer {
   display: flex;
   height: 150px;

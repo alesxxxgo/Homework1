@@ -141,12 +141,35 @@
                 <div class="mobile-card__info">
                     <h3 class="mobile-card__title">Угадай число</h3>
                     <p class="mobile-card__text">Попробуй угадать случайное число от 1 до 100.</p>
-                    <a href="#" class="mobile-card__btn">Играть!</a>
+                    <a href="#guess-game-window" class="mobile-card__btn id-guess-trigger">Играть!</a>
                 </div>
                 <div class="mobile-card__image-box">
                     <img src="./img/game-1.png" alt="Угадай число" class="mobile-card__img">
                 </div>
             </div>
+
+            <div id="guess-game-window" class="quiz-container hidden">
+            <div class="quiz-header">
+                <h2>Игра «Угадай число»</h2>
+                <button id="close-guess-btn" class="close-btn">&times;</button>
+            </div>
+  
+            <div id="guess-box">
+                <p class="question">Компьютер загадал число от 1 до 100. Попробуй его угадать!</p>
+                <div class="guess-input-group">
+                    <input type="number" id="user-guess-input" min="1" max="100" placeholder="Введите число...">
+                    <button id="submit-guess-btn">Проверить</button>
+                </div>
+                <p id="guess-hint-text" class="hint-text">Жду вашей догадки...</p>
+            </div>
+
+            <div id="guess-result-box" class="result-box hidden">
+                <h3>Вы угадали! 🎉</h3>
+                <p id="guess-stats-text"></p>
+                <button id="restart-guess-btn">Играть заново</button>
+            </div>
+            </div>
+
 
             <div id="simple-arithmethics" class="mobile-card">
                 <div class="mobile-card__image-box">
@@ -155,20 +178,69 @@
                 <div class="mobile-card__info">
                     <h3 class="mobile-card__title">Простая арифметика</h3>
                     <p class="mobile-card__text">Попробуй решить простые арифметические задачи.</p>
-                    <a href="#" class="mobile-card__btn">Играть!</a>
+                    <a href="#arithmetic-game-window" class="mobile-card__btn id-arithmetic-trigger">Играть!</a>
                 </div>
             </div>
+
+            <div id="arithmetic-game-window" class="quiz-container hidden">
+            <div class="quiz-header">
+                <h2>Игра «Простая арифметика»</h2>
+                <button id="close-arithmetic-btn" class="close-btn">&times;</button>
+            </div>
+  
+            <div id="arithmetic-box">
+                <p class="question">Решите сгенерированный пример:</p>
+                <h1 id="arithmetic-task-text" style="font-size: 48px; font-weight: 700; margin-bottom: 24px; letter-spacing: 2px;">5 + 3 = ?</h1>
+    
+                <div class="guess-input-group">
+                    <input type="number" id="user-arithmetic-input" placeholder="Ваш ответ...">
+                    <button id="submit-arithmetic-btn">Проверить</button>
+                </div>
+                <p id="arithmetic-hint-text" class="hint-text">Жду вашего ответа...</p>
+            </div>
+
+            <div id="arithmetic-result-box" class="result-box hidden">
+                <h3 id="arithmetic-result-title">Верно! 🎉</h3>
+                <p id="arithmetic-stats-text"></p>
+                <button id="next-arithmetic-btn" class="result-box__desc-btn" style="margin: 0 auto;">Следующий пример</button>
+            </div>
+            </div>
+
 
             <div id="flip-the-text" class="mobile-card">
                 <div class="mobile-card__info">
                     <h3 class="mobile-card__title">Переверни текст</h3>
                     <p class="mobile-card__text">Попробуй ввести текст, который будет перевернут.</p>
-                    <a href="#" class="mobile-card__btn">Играть!</a>
+                    <a href="#flip-game-window" class="mobile-card__btn id-flip-trigger">Играть!</a>
                 </div>
                 <div class="mobile-card__image-box">
                     <img src="./img/game-3.png" alt="Переверни текст" class="mobile-card__img">
                 </div>
             </div>
+
+            <div id="flip-game-window" class="quiz-container hidden">
+            <div class="quiz-header">
+                <h2>Игра «Переверни текст»</h2>
+                <button id="close-flip-btn" class="close-btn">&times;</button>
+            </div>
+  
+            <div class="flip-content-box">
+                <p class="question">Введите любое слово или фразу, и сайт мгновенно перевернет их задом наперед:</p>
+    
+                <div class="guess-input-group">
+                    <input type="text" id="user-flip-input" placeholder="Введите ваш текст здесь...">
+                    <button id="submit-flip-btn">Перевернуть</button>
+                </div>
+            </div>
+
+            <div id="flip-result-box" class="result-box hidden">
+                <h3 style="color: #000000; font-size: 28px; margin-bottom: 12px; font-weight: 600;">Перевернутый текст:</h3>
+                <h1 id="flipped-output-text" style="font-size: 40px; font-weight: 700; color: #007bff; margin-bottom: 32px; word-break: break-all; min-height: 48px;"></h1>
+    
+                <button id="clear-flip-btn" class="result-box__desc-btn" style="margin: 0 auto;">Очистить и повторить</button>
+            </div>
+            </div>
+
 
             <div id="rock-paper-scissors" class="mobile-card">
                 <div class="mobile-card__image-box">
