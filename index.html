@@ -248,10 +248,33 @@
                 </div>
                 <div class="mobile-card__info">
                     <h3 class="mobile-card__title">Камень, ножницы, бумага</h3>
-                    <p class="mobile-card__text">Сыграй в популярную игру против компьютера.</p>
-                    <a href="#" class="mobile-card__btn">Играть!</a>
+                    <p class="mobile-card__text">Поиграй против компьютера в классическую игру.</p>
+                    <a href="#rps-game-window" class="mobile-card__btn id-rps-trigger">Играть!</a>
                 </div>
             </div>
+
+            <div id="rps-game-window" class="quiz-container hidden">
+            <div class="quiz-header">
+                <h2>Камень, Ножницы, Бумага</h2>
+                <button id="close-rps-btn" class="close-btn">&times;</button>
+            </div>
+  
+            <div id="rps-box">
+                <p class="question">Сделай свой ход:</p>
+                <div class="options">
+                    <button class="option-btn rps-btn" data-choice="камень">✊ Камень</button>
+                    <button class="option-btn rps-btn" data-choice="ножницы">✌️ Ножницы</button>
+                    <button class="option-btn rps-btn" data-choice="бумага">✋ Бумага</button>
+                </div>
+            </div>
+
+            <div id="rps-result-box" class="result-box hidden">
+                <h3 id="rps-result-title">Победа! 🎉</h3>
+                <p id="rps-stats-text"></p>
+                <button id="restart-rps-btn">Играть еще раз</button>
+            </div>
+            </div>
+
 
             <div id="easy-quizz" class="mobile-card">
                 <div class="mobile-card__info">
