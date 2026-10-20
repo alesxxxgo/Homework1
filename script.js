@@ -402,3 +402,87 @@ clearFlipBtn.addEventListener('click', () => {
   resetFlipGame();
   flipInput.focus();
 });
+
+// Элементы игры КНБ
+const rpsWindow = document.getElementById('rps-game-window');
+const rpsBox = document.getElementById('rps-box');
+const rpsResultBox = document.getElementById('rps-result-box');
+const rpsResultTitle = document.getElementById('rps-result-title');
+const rpsStatsText = document.getElementById('rps-stats-text');
+const restartRpsBtn = document.getElementById('restart-rps-btn');
+const closeRpsBtn = document.getElementById('close-rps-btn');
+
+const openRpsTriggers = document.querySelectorAll('a[href="#rock-paper-scissors"], .id-rps-trigger');
+const rpsButtons = document.querySelectorAll('.rps-btn');
+
+// Открытие игры
+openRpsTriggers.forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    rpsWindow.classList.remove('hidden');
+    resetRpsGame();
+    
+    setTimeout(() => {
+      rpsWindow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 50);
+  });
+});
+
+// Закрытие игры
+closeRpsBtn.addEventListener('click', () => {
+  rpsWindow.classList.add('hidden');
+});
+
+// Логика раунда при клике на Камень, Ножницы или Бумагу
+rpsButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const userChoice = btn.getAttribute('data-choice');
+    
+    // Обходной синтаксис для стабильности платформы
+    const variants = Array.of('камень', 'ножницы', 'бумага');
+    const computerChoice = variants[Math.floor(Math.random() * variants.length)];
+
+    let resultTitle = '';
+    let resultColor = '';
+
+    if (userChoice === computerChoice) {
+      resultTitle = 'Ничья 🤝';
+      resultColor = '#6c757d';
+    } else if (
+      (userChoice === 'камень' && computerChoice === 'ножницы') ||
+      (userChoice === 'ножницы' && computerChoice === 'бумага') ||
+      (userChoice === 'бумага' && computerChoice === 'камень')
+    ) {
+      resultTitle = 'Победа! 🎉';
+      resultColor = '#BCEC30'; // Твой фирменный салатовый
+    } else {
+      resultTitle = 'Поражение 😢';
+      resultColor = '#ff4d4d';
+    }
+
+    // Обновляем и показываем окно результатов
+    rpsResultTitle.textContent = resultTitle;
+    if (resultTitle.includes('Победа')) {
+      rpsResultTitle.style.color = '#BCEC30';
+      rpsResultTitle.style.webkitTextStroke = '1px #000000';
+    } else {
+      rpsResultTitle.style.color = resultColor;
+      rpsResultTitle.style.webkitTextStroke = 'unset';
+    }
+
+    rpsStatsText.innerHTML = `Твой ход: <b>${userChoice}</b>.<br>Ход компьютера: <b>${computerChoice}</b>.`;
+    
+    rpsBox.classList.add('hidden');
+    rpsResultBox.classList.remove('hidden');
+
+    // Дублируем в alert по ТЗ
+    alert(`Твой выбор: ${userChoice}\nВыбор компьютера: ${computerChoice}\n\nРезультат: ${resultTitle}`);
+  });
+});
+
+function resetRpsGame() {
+  rpsBox.classList.remove('hidden');
+  rpsResultBox.classList.add('hidden');
+}
+
+restartRpsBtn.addEventListener('click', resetRpsGame);
