@@ -486,3 +486,84 @@ function resetRpsGame() {
 }
 
 restartRpsBtn.addEventListener('click', resetRpsGame);
+
+// Элементы игры Генератор Цветов
+const colorWindow = document.getElementById('color-game-window');
+const colorPlayground = document.getElementById('color-game-box');
+const colorHexCode = document.getElementById('color-hex-code');
+const colorInstruction = document.getElementById('color-game-instruction');
+const generateColorBtn = document.getElementById('generate-color-btn');
+const closeColorBtn = document.getElementById('close-color-btn');
+
+const openColorTriggers = document.querySelectorAll('a[href="#random-color-generator"], .id-color-trigger');
+
+// Открытие игры
+openColorTriggers.forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    colorWindow.classList.remove('hidden');
+    resetColorGame();
+    
+    setTimeout(() => {
+      colorWindow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 50);
+  });
+});
+
+// Закрытие игры
+closeColorBtn.addEventListener('click', () => {
+  colorWindow.classList.add('hidden');
+});
+
+// Функция генерации случайного HEX-цвета
+function getRandomHexColor() {
+  // Обходной синтаксис строк/массивов для обхода бага платформы
+  const hexCharacters = Array.from('0123456789ABCDEF');
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hexCharacters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Изменение цвета всей карточки по клику на кнопку
+generateColorBtn.addEventListener('click', () => {
+  const newColor = getRandomHexColor();
+  
+  // === ИЗМЕНЕНИЕ: Меняем фон ВСЕЙ карточки целиком ===
+  colorWindow.style.backgroundColor = newColor;
+  
+  // Отображаем HEX-код на экране
+  colorHexCode.textContent = newColor;
+
+  // Проверка яркости для адаптации текста
+  const r = parseInt(newColor.slice(1, 3), 16);
+  const g = parseInt(newColor.slice(3, 5), 16);
+  const b = parseInt(newColor.slice(5, 7), 16);
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  
+  // Находим заголовок H2 в шапке, чтобы он тоже не пропадал
+  const quizHeaderTitle = colorWindow.querySelector('.quiz-header h2');
+  
+  if (brightness < 128) {
+    colorHexCode.style.color = '#ffffff';
+    colorInstruction.style.color = '#ffffff';
+    if (quizHeaderTitle) quizHeaderTitle.style.color = '#ffffff';
+  } else {
+    colorHexCode.style.color = '#000000';
+    colorInstruction.style.color = '#202027';
+    if (quizHeaderTitle) quizHeaderTitle.style.color = '#000000';
+  }
+
+  alert(`Сгенерирован случайный цвет: ${newColor}`);
+});
+
+// Обновленная функция сброса
+function resetColorGame() {
+  colorWindow.style.backgroundColor = '#ffffff'; // Возвращаем белый фон карточке
+  colorHexCode.textContent = '#FFFFFF';
+  colorHexCode.style.color = '#000000';
+  colorInstruction.style.color = '#202027';
+  const quizHeaderTitle = colorWindow.querySelector('.quiz-header h2');
+  if (quizHeaderTitle) quizHeaderTitle.style.color = '#000000';
+}

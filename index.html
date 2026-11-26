@@ -34,7 +34,21 @@
     </header>
 
     <div class="ticker">
-        <div class="ticker__track">
+        <div class="ticker__container">
+            <div class="ticker__group">
+                <span class="ticker__item">Викторина</span>
+                <div class="ticker__star"></div>
+                <span class="ticker__item">Угадай число</span>
+                <div class="ticker__star"></div>
+                <span class="ticker__item">Переверни текст</span>
+                <div class="ticker__star"></div>
+                <span class="ticker__item">Простая арифметика</span>
+                <div class="ticker__star"></div>
+                <span class="ticker__item">Камень, Ножницы, Бумага</span>
+                <div class="ticker__star"></div>
+                <span class="ticker__item">Генератор Случайных Цветов</span>
+                <div class="ticker__star"></div>
+            </div>
             <div class="ticker__group">
                 <span class="ticker__item">Викторина</span>
                 <div class="ticker__star"></div>
@@ -304,17 +318,32 @@
               </div>
             </div>
 
+
             <div id="random-color-generator" class="mobile-card">
                 <div class="mobile-card__image-box">
                     <img src="./img/game-6.png" alt="Генератор случайных цветов" class="mobile-card__img">
                 </div>
                 <div class="mobile-card__info">
                     <h3 class="mobile-card__title">Генератор случайных цветов</h3>
-                    <p class="mobile-card__text">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
-                    <a href="#" class="mobile-card__btn">Играть!</a>
+                    <p class="mobile-card__text">Попробуй изменить фон карточки на случайный цвет.</p>
+                    <a href="#color-game-window" class="mobile-card__btn id-color-trigger">Играть!</a>
                 </div>
             </div>
 
+            <div id="color-game-window" class="quiz-container hidden">
+            <div class="quiz-header">
+                <h2>Генератор цветов</h2>
+                <button id="close-color-btn" class="close-btn">&times;</button>
+            </div>
+  
+            <div id="color-game-box" class="color-playground">
+                <p class="question" id="color-game-instruction">Нажми на кнопку ниже, чтобы сгенерировать случайный цвет фона!</p>
+    
+                <h1 id="color-hex-code" class="hex-display">#FFFFFF</h1>
+    
+                <button id="generate-color-btn" class="quiz-container-btn" style="margin: 24px auto 0 auto;">Изменить цвет</button>
+            </div>
+            </div>
         </div>
     </section>
     <footer class="footer">
